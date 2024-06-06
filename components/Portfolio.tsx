@@ -27,9 +27,9 @@ export default function Portfolio() {
                 </p>
               </Fade>
             </div>
-            <div className="flex justify-center basis-[50%] md:p-0 px-10">
+            <div className="flex justify-center basis-[60%]  ">
               <Fade initial={10} animate={0} delay={0.5}>
-                <Carousel className="w-full max-w-md ">
+                <Carousel className="w-full max-w-lg  ">
                   <CarouselContent>
                     {IMAGE.map((value, index) => (
                       <CarouselItem key={index}>
@@ -43,8 +43,10 @@ export default function Portfolio() {
                       </CarouselItem>
                     ))}
                   </CarouselContent>
-                  <CarouselPrevious />
-                  <CarouselNext />
+                  <div className="flex flex-row justify-center gap-2">
+                    <CarouselPrevious />
+                    <CarouselNext />
+                  </div>
                 </Carousel>
               </Fade>
             </div>
