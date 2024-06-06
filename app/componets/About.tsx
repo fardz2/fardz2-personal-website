@@ -25,10 +25,10 @@ export default function About() {
               </Fade>
             </div>
             <Fade initial={10} animate={0} delay={0.5}>
-              <div className="overflow-hidden    ">
+              <div className="overflow-hidden">
                 <Image
                   src={"/assets/faridz.jpg"}
-                  alt={""}
+                  alt={"faridz"}
                   width={700}
                   height={700}
                   className="object-cover !m-0 !p-0 object-top  w-[200px]  md:w-[1300px] h-[500px] rounded-[10px]  relative "
