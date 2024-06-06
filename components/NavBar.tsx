@@ -115,15 +115,15 @@ export default function NavBar() {
               </motion.p>
             </Link>
 
-            <Link href={"#service"}>
+            <Link href={"#portfolio"}>
               <motion.p
                 initial={{ color: "#000" }}
                 animate={{
-                  color: activeSection === "service" ? "#FEBD17" : "#000",
+                  color: activeSection === "portfolio" ? "#FEBD17" : "#000",
                 }}
                 transition={{ duration: 0.3 }}
               >
-                Service
+                Portfolio
               </motion.p>
             </Link>
 
@@ -190,7 +190,7 @@ export default function NavBar() {
             </Fade>
             <Fade initial={10} animate={0} delay={0.4}>
               <Link
-                href={"#service"}
+                href={"#portfolio"}
                 onClick={() => {
                   setShow(!show);
                 }}
@@ -198,11 +198,11 @@ export default function NavBar() {
                 <motion.p
                   initial={{ color: "#000" }}
                   animate={{
-                    color: activeSection === "service" ? "#FEBD17" : "#000",
+                    color: activeSection === "portfolio" ? "#FEBD17" : "#000",
                   }}
                   transition={{ duration: 0.3 }}
                 >
-                  Service
+                  Portfolio
                 </motion.p>
               </Link>
             </Fade>

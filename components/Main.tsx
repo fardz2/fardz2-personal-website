@@ -57,12 +57,8 @@ export default function Main() {
             <AnimatedTooltipPreview />
           </Fade>
         </div>
-        <div className="basis-1/2 z-50"></div>
+        <div className="basis-1/2 "></div>
       </div>
-
-      {/* <div className="absolute bottom-0 left-[-30px] z-20">
-        <Image src={"/assets/faridz.png"} alt={""} width={100} height={100} />
-      </div> */}
     </section>
   );
 }

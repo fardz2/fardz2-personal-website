@@ -1,6 +1,9 @@
-import About from "./componets/About";
-import Main from "./componets/Main";
-import NavBar from "./componets/NavBar";
+import Contact from "../components/Contact";
+import About from "../components/About";
+import Main from "../components/Main";
+import NavBar from "../components/NavBar";
+import Portfolio from "../components/Portfolio";
+import Footer from "../components/footer";
 
 export default function Page() {
   return (
@@ -8,6 +11,9 @@ export default function Page() {
       <NavBar />
       <Main />
       <About />
+      <Portfolio />
+      <Contact />
+      <Footer />
     </>
   );
 }
