@@ -53,12 +53,7 @@ export default function Main() {
       </div>
 
       <div className="absolute bottom-0 left-[-30px] z-20">
-        {/* <Image
-          src={"/assets/element/element1.png"}
-          alt={""}
-          width={100}
-          height={100}
-        /> */}
+        <Image src={"/assets/faridz.png"} alt={""} width={100} height={100} />
       </div>
     </section>
   );
