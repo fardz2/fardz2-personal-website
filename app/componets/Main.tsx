@@ -52,9 +52,9 @@ export default function Main() {
         <div className="basis-1/2 z-50"></div>
       </div>
 
-      <div className="absolute bottom-0 left-[-30px] z-20">
+      {/* <div className="absolute bottom-0 left-[-30px] z-20">
         <Image src={"/assets/faridz.png"} alt={""} width={100} height={100} />
-      </div>
+      </div> */}
     </section>
   );
 }
