@@ -24,16 +24,16 @@ export default function About() {
                 </p>
               </Fade>
             </div>
-            <Fade initial={10} animate={0} delay={0.5}>
-              {/* <div className="overflow-hidden">
+            {/* <Fade initial={10} animate={0} delay={0.5}>
+              <div className="overflow-hidden">
                 <Image
                   src={"/assets/images/faridz.jpg"}
                   alt={"faridz"}
                   width={1300}
                   height={1300}
                 />
-              </div> */}
-            </Fade>
+              </div>
+            </Fade> */}
           </div>
           {/* <div className="absolute right-[-300px] top-[-150px]">
             <Image
