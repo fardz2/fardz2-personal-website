@@ -27,7 +27,7 @@ export default function About() {
             <Fade initial={10} animate={0} delay={0.5}>
               <div className="overflow-hidden">
                 <Image
-                  src={"/assets/images/faridz.jpg"}
+                  src={"/assets/profile.jpg"}
                   alt={"faridz"}
                   width={700}
                   height={700}
