@@ -21,9 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.className}  `}>
-        <div className="overflow-x-hidden">{children}</div>
-      </body>
+      <body className={`${poppins.className}  `}>{children}</body>
     </html>
   );
 }
