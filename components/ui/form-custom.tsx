@@ -16,6 +16,7 @@ import {
 } from "./form";
 import { Input } from "./input";
 import { Textarea } from "./textarea";
+import { PaperPlaneIcon } from "@radix-ui/react-icons";
 
 const formSchema = z.object({
   fullname: z.string().min(2, {
@@ -96,8 +97,12 @@ export function FormCustom() {
             />
           </div>
         </div>
-        <Button type="submit" className="mt-10">
-          Submit
+        <Button
+          type="submit"
+          className="mt-10 font-bold flex items-center justify-between gap-2"
+        >
+          Send
+          <PaperPlaneIcon className="h-4 w-4" />
         </Button>
       </form>
     </Form>
