@@ -127,15 +127,15 @@ export default function NavBar() {
               </motion.p>
             </Link>
 
-            <Link href={"#product"}>
+            <Link href={"#contact"}>
               <motion.p
                 initial={{ color: "#000" }}
                 animate={{
-                  color: activeSection === "product" ? "#FEBD17" : "#000",
+                  color: activeSection === "contact" ? "#FEBD17" : "#000",
                 }}
                 transition={{ duration: 0.3 }}
               >
-                Product
+                contact
               </motion.p>
             </Link>
           </div>
@@ -208,7 +208,7 @@ export default function NavBar() {
             </Fade>
             <Fade initial={10} animate={0} delay={0.5}>
               <Link
-                href={"#product"}
+                href={"#contact"}
                 onClick={() => {
                   setShow(!show);
                 }}
@@ -216,11 +216,11 @@ export default function NavBar() {
                 <motion.p
                   initial={{ color: "#000" }}
                   animate={{
-                    color: activeSection === "product" ? "#FEBD17" : "#000",
+                    color: activeSection === "contact" ? "#FEBD17" : "#000",
                   }}
                   transition={{ duration: 0.3 }}
                 >
-                  Product
+                  contact
                 </motion.p>
               </Link>
             </Fade>
