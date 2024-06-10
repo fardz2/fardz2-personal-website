@@ -135,7 +135,7 @@ export default function NavBar() {
                 }}
                 transition={{ duration: 0.3 }}
               >
-                contact
+                Contact
               </motion.p>
             </Link>
           </div>
