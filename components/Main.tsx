@@ -23,10 +23,13 @@ export default function Main() {
       className: "text-[#FEBD17]",
     },
     {
-      text: "Full",
+      text: "Web",
     },
     {
-      text: "Stack",
+      text: "&",
+    },
+    {
+      text: "Mobile",
     },
     {
       text: "Developer",
