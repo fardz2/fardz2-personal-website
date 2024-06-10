@@ -15,7 +15,7 @@ export default function Portfolio() {
       <section className="py-20 " id="portfolio">
         <div className="relative container mx-auto px-5 md:px-24 ">
           <div className="flex justify-center md:mt-0 mt-20  flex-col lg:flex-row-reverse gap-5 items-center  ">
-            <div className="flex flex-col gap-4justify-center basis-[50%]">
+            <div className="flex flex-col gap-4 justify-center basis-[50%]">
               <Fade initial={-10} animate={0} delay={0.7}>
                 <h2 className="md:text-5xl text-4xl font-bold ">Portfolio</h2>
               </Fade>
@@ -29,7 +29,7 @@ export default function Portfolio() {
             </div>
             <div className="flex justify-center basis-[60%]  ">
               <Fade initial={10} animate={0} delay={0.5}>
-                <Carousel className="w-full maxw-lg  ">
+                <Carousel className="w-full max-w-lg  ">
                   <CarouselContent>
                     {IMAGE.map((value, index) => (
                       <CarouselItem key={index}>
