@@ -20,11 +20,11 @@ import { PaperPlaneIcon } from "@radix-ui/react-icons";
 
 const formSchema = z.object({
   fullname: z.string().min(2, {
-    message: "Fullname must be at least 2 characters.",
+    message: "Fullname must be at least 2 characters",
   }),
   email: z.string().email("This is not a valid email"),
   message: z.string().min(10, {
-    message: "Message must be at least 10 characters.",
+    message: "Message must be at least 10 characters",
   }),
 });
 
