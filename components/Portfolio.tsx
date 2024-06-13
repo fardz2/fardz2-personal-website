@@ -1,55 +1,81 @@
 import Image from "next/image";
 import { Fade } from "./animate/Fade";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "./ui/carousel";
+import { Button } from "./ui/button";
 
-const IMAGE = ["/assets/1.png", "/assets/2.png", "/assets/3.png"];
+interface Portfolio {
+  image: string;
+  title: string;
+  description: string;
+}
+const portfolios: Portfolio[] = [
+  {
+    image: "/assets/3.png",
+    title: "Bandung Sewa Motor",
+    description:
+      "'Bandung Sewa Motor' is an innovative mobile app I developed as the culmination of my independent study at LearningX. This final project is strategically designed to focus on client acquisition and custom application development.",
+  },
+  {
+    image: "/assets/1.png",
+    title: "Graphic Tailor",
+    description:
+      "'Graphic Tailor' is a Bandung-based local business specializing in clothing tailoring. I developed a website landing page to boost its online presence and attract potential customers.",
+  },
+  {
+    image: "/assets/4.png",
+    title: "BeritaCepat",
+    description:
+      "'BeritaCepat' is a web-based news portal application that provides various news categories such as politics, economics, sports, technology and entertainment, equipped with a search feature to make it easier for users to find the news they want.",
+  },
+  {
+    image: "/assets/2.png",
+    title: "Smart Library",
+    description:
+      "'Smart Library' is an online platform I designed to streamline book borrowing and returning. This project gave me invaluable experience in developing websites with separate frontend and backend components.",
+  },
+];
 export default function Portfolio() {
+  let delay = 0.8;
   return (
     <>
       <section className="py-20 " id="portfolio">
         <div className="relative container mx-auto px-5 md:px-24 ">
-          <div className="flex justify-center md:mt-0 mt-20  flex-col lg:flex-row-reverse gap-5 items-center  ">
-            <div className="flex flex-col gap-4 justify-center basis-[50%]">
-              <Fade initial={-10} animate={0} delay={0.7}>
-                <h2 className="md:text-5xl text-4xl font-bold ">Portfolio</h2>
-              </Fade>
-              <Fade initial={-10} animate={0} delay={0.8}>
-                <p>
-                  Here is my design portfolio. You can check it out yourself.
-                  Some of my work is live. As you can see, I work with different
-                  styles.
-                </p>
-              </Fade>
-            </div>
-            <div className="flex justify-center basis-[60%]  ">
-              <Fade initial={10} animate={0} delay={0.5}>
-                <Carousel className="w-full max-w-lg  ">
-                  <CarouselContent>
-                    {IMAGE.map((value, index) => (
-                      <CarouselItem key={index}>
-                        <Image
-                          src={value}
-                          alt={"faridz"}
-                          width={1000}
-                          height={1000}
-                          className="rounded-md"
-                        />
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                  <div className="flex flex-row justify-center gap-2">
-                    <CarouselPrevious />
-                    <CarouselNext />
+          <Fade initial={-10} animate={0} delay={0.7}>
+            <h2 className="md:text-5xl text-4xl font-bold mb-10">Portfolio</h2>
+          </Fade>
+
+          <div className="grid grid-rows-1  md:grid-cols-2  lg:grid-cols-4 gap-3  ">
+            {portfolios.map((value, index) => (
+              <Fade initial={-10} animate={0} delay={(delay += 0.1)}>
+                <div
+                  className="relative overflow-hidden  rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-100 pb-12 h-[490px]"
+                  key={index}
+                >
+                  <div className="w-full h-[200px] bg-gray-100 rounded-tr-lg rounded-tl-lg  overflow-hidden  relative">
+                    <Image
+                      src={value.image}
+                      alt=""
+                      width={1000}
+                      height={1000}
+                      className={`group-hover:scale-95 group-hover:rounded-2xl transform object-cover w-full h-full transition duration-200 `}
+                    />
                   </div>
-                </Carousel>
+                  <div className=" p-4 flex flex-col justify-between ">
+                    <h2 className="font-bold text-lg text-zinc-700">
+                      {value.title}
+                    </h2>
+                    <h2 className="font-normal  text-sm text-zinc-500">
+                      {value.description}
+                    </h2>
+                    <div className="absolute bottom-0 p-4  right-0 left-0 flex flex-row justify-between items-center ">
+                      <span className="text-sm text-gray-500">Lorem ipsum</span>
+                      <Button className="relative z-10   bg-black text-white font-bold rounded-xl block text-xs">
+                        Read More
+                      </Button>
+                    </div>
+                  </div>
+                </div>
               </Fade>
-            </div>
+            ))}
           </div>
 
           {/* <div className="absolute right-[-300px] top-[-150px]">
