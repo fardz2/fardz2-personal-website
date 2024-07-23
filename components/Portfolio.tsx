@@ -65,7 +65,7 @@ export default function Portfolio() {
                     <h2 className="font-bold text-lg text-zinc-700 dark:text-zinc-300">
                       {value.title}
                     </h2>
-                    <h2 className="font-normal  text-sm dark:text-zinc-300">
+                    <h2 className="font-normal  text-sm dark:text-zinc-300 ">
                       {value.description}
                     </h2>
                   </div>
