@@ -37,7 +37,7 @@ export default function Portfolio() {
   let delay = 0.8;
   return (
     <>
-      <section className="py-20 " id="portfolio">
+      <section className="py-20 mt-10 " id="portfolio">
         <div className="relative container mx-auto px-5 md:px-24 ">
           <Fade initial={-10} animate={0} delay={0.7}>
             <h2 className="md:text-5xl text-4xl font-bold mb-10">Portfolio</h2>
@@ -45,12 +45,14 @@ export default function Portfolio() {
 
           <div className="grid grid-rows-1  md:grid-cols-2  lg:grid-cols-4 gap-3  ">
             {portfolios.map((value, index) => (
-              <Fade initial={-10} animate={0} delay={(delay += 0.1)}>
-                <div
-                  className="relative overflow-hidden  rounded-2xl transition duration-200 group bg-white hover:shadow-xl border border-zinc-100 pb-12 h-[490px]"
-                  key={index}
-                >
-                  <div className="w-full h-[200px] bg-gray-100 rounded-tr-lg rounded-tl-lg  overflow-hidden  relative">
+              <Fade
+                initial={-10}
+                animate={0}
+                delay={(delay += 0.1)}
+                key={index}
+              >
+                <div className="relative overflow-hidden  rounded-2xl transition duration-200 group bg-white dark:bg-gray-900 hover:shadow-xl border border-zinc-100 dark:border-gray-900 pb-12 h-[490px]">
+                  <div className="w-full h-[200px] bg-gray-100 dark:bg-gray-900 rounded-tr-lg rounded-tl-lg  overflow-hidden  relative">
                     <Image
                       src={value.image}
                       alt=""
@@ -60,18 +62,12 @@ export default function Portfolio() {
                     />
                   </div>
                   <div className=" p-4 flex flex-col justify-between ">
-                    <h2 className="font-bold text-lg text-zinc-700">
+                    <h2 className="font-bold text-lg text-zinc-700 dark:text-zinc-300">
                       {value.title}
                     </h2>
-                    <h2 className="font-normal  text-sm text-zinc-500">
+                    <h2 className="font-normal  text-sm dark:text-zinc-300">
                       {value.description}
                     </h2>
-                    <div className="absolute bottom-0 p-4  right-0 left-0 flex flex-row justify-between items-center ">
-                      <span className="text-sm text-gray-500">Lorem ipsum</span>
-                      <Button className="relative z-10   bg-black text-white font-bold rounded-xl block text-xs">
-                        Read More
-                      </Button>
-                    </div>
                   </div>
                 </div>
               </Fade>

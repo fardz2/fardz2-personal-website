@@ -13,7 +13,7 @@ export default function About() {
                 <h2 className="md:text-5xl text-4xl font-bold ">About Me</h2>
               </Fade>
               <Fade initial={-10} animate={0} delay={0.9}>
-                <p>
+                <p className="dark:text-zinc-300">
                   An experienced full stack developer, I come from South
                   Kalimantan and was born on April 10 2003. Having expertise in
                   front end, back end and mobile application development, I am

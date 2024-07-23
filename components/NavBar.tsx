@@ -4,15 +4,14 @@ import React, { useEffect, useState, useRef } from "react";
 import { Rotate as Hamburger } from "hamburger-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Fade } from "./animate/Fade";
-import { usePathname } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
+import { ToogleDarkMode } from "./dark-mode/toogle-darkmode";
 
 export default function NavBar() {
   const [scrolling, setScrolling] = useState<boolean>(false);
   const [show, setShow] = useState<boolean>(false);
   const [activeSection, setActiveSection] = useState<string>("");
-  const pathname = usePathname();
+
   const sectionsRef = useRef<{ [key: string]: IntersectionObserverEntry }>({});
 
   useEffect(() => {
@@ -76,12 +75,14 @@ export default function NavBar() {
       <header
         className={cn(
           "fixed top-0 right-0 left-0 z-[100] transition",
-          scrolling ? "bg-white shadow-sm" : "",
+          scrolling
+            ? "bg-white/30 dark:bg-gray-950/30 backdrop-blur-sm shadow-sm "
+            : "",
           show ? "shadow-none" : ""
         )}
       >
         <div className="flex items-center p-4 container mx-auto px-5 md:px-24 justify-between z-50 ">
-          <div>
+          <div className="dark:text-white">
             {/* <Image
               src={"/assets/image/logo.png"}
               alt={""}
@@ -90,54 +91,59 @@ export default function NavBar() {
             /> */}
             Fardz2
           </div>
-          <div className="hidden md:flex justify-between gap-9 ">
+          <div className="hidden md:flex justify-between gap-9 items-center ">
             <Link href={"#main"}>
-              <motion.p
-                initial={{ color: "#000" }}
-                animate={{
-                  color: activeSection === "main" ? "#FEBD17" : "#000",
-                }}
-                transition={{ duration: 0.3 }}
+              <p
+                className={cn(
+                  " transition-all ",
+                  activeSection == "main"
+                    ? "text-[#FEBD17]"
+                    : "text-black dark:text-slate-300"
+                )}
               >
                 Home
-              </motion.p>
+              </p>
             </Link>
 
             <Link href={"#about"}>
-              <motion.p
-                initial={{ color: "#000" }}
-                animate={{
-                  color: activeSection === "about" ? "#FEBD17" : "#000",
-                }}
-                transition={{ duration: 0.3 }}
+              <p
+                className={cn(
+                  " transition-all ",
+                  activeSection == "about"
+                    ? "text-[#FEBD17]"
+                    : "text-black dark:text-slate-300"
+                )}
               >
                 About
-              </motion.p>
+              </p>
             </Link>
 
             <Link href={"#portfolio"}>
-              <motion.p
-                initial={{ color: "#000" }}
-                animate={{
-                  color: activeSection === "portfolio" ? "#FEBD17" : "#000",
-                }}
-                transition={{ duration: 0.3 }}
+              <p
+                className={cn(
+                  " transition-all ",
+                  activeSection == "portfolio"
+                    ? "text-[#FEBD17]"
+                    : "text-black dark:text-slate-300"
+                )}
               >
                 Portfolio
-              </motion.p>
+              </p>
             </Link>
 
             <Link href={"#contact"}>
-              <motion.p
-                initial={{ color: "#000" }}
-                animate={{
-                  color: activeSection === "contact" ? "#FEBD17" : "#000",
-                }}
-                transition={{ duration: 0.3 }}
+              <p
+                className={cn(
+                  " transition-all ",
+                  activeSection == "contact"
+                    ? "text-[#FEBD17]"
+                    : "text-black dark:text-slate-300"
+                )}
               >
                 Contact
-              </motion.p>
+              </p>
             </Link>
+            <ToogleDarkMode />
           </div>
           <div className="block md:hidden">
             <Hamburger toggled={show} toggle={setShow} />
@@ -147,7 +153,7 @@ export default function NavBar() {
       <AnimatePresence>
         {show && (
           <motion.div
-            className="fixed top-0 right-0 left-0 bottom-0 flex items-center justify-center flex-col gap-3 z-[90] bg-white"
+            className="fixed top-0 right-0 left-0 bottom-0 flex items-center justify-center flex-col gap-3 z-[90] bg-white dark:bg-black"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -159,15 +165,16 @@ export default function NavBar() {
                   setShow(!show);
                 }}
               >
-                <motion.p
-                  initial={{ color: "#000" }}
-                  animate={{
-                    color: activeSection === "main" ? "#FEBD17" : "#000",
-                  }}
-                  transition={{ duration: 0.3 }}
+                <p
+                  className={cn(
+                    " transition-all ",
+                    activeSection == "main"
+                      ? "text-[#FEBD17]"
+                      : "text-black dark:text-slate-300"
+                  )}
                 >
                   Home
-                </motion.p>
+                </p>
               </Link>
             </Fade>
             <Fade initial={10} animate={0} delay={0.3}>
@@ -177,15 +184,16 @@ export default function NavBar() {
                   setShow(!show);
                 }}
               >
-                <motion.p
-                  initial={{ color: "#000" }}
-                  animate={{
-                    color: activeSection === "about" ? "#FEBD17" : "#000",
-                  }}
-                  transition={{ duration: 0.3 }}
+                <p
+                  className={cn(
+                    " transition-all ",
+                    activeSection == "about"
+                      ? "text-[#FEBD17]"
+                      : "text-black dark:text-slate-300"
+                  )}
                 >
                   About
-                </motion.p>
+                </p>
               </Link>
             </Fade>
             <Fade initial={10} animate={0} delay={0.4}>
@@ -195,15 +203,16 @@ export default function NavBar() {
                   setShow(!show);
                 }}
               >
-                <motion.p
-                  initial={{ color: "#000" }}
-                  animate={{
-                    color: activeSection === "portfolio" ? "#FEBD17" : "#000",
-                  }}
-                  transition={{ duration: 0.3 }}
+                <p
+                  className={cn(
+                    " transition-all ",
+                    activeSection == "portfolio"
+                      ? "text-[#FEBD17]"
+                      : "text-black dark:text-slate-300"
+                  )}
                 >
                   Portfolio
-                </motion.p>
+                </p>
               </Link>
             </Fade>
             <Fade initial={10} animate={0} delay={0.5}>
@@ -213,16 +222,20 @@ export default function NavBar() {
                   setShow(!show);
                 }}
               >
-                <motion.p
-                  initial={{ color: "#000" }}
-                  animate={{
-                    color: activeSection === "contact" ? "#FEBD17" : "#000",
-                  }}
-                  transition={{ duration: 0.3 }}
+                <p
+                  className={cn(
+                    " transition-all ",
+                    activeSection == "contact"
+                      ? "text-[#FEBD17]"
+                      : "text-black dark:text-slate-300"
+                  )}
                 >
                   Contact
-                </motion.p>
+                </p>
               </Link>
+            </Fade>
+            <Fade initial={10} animate={0} delay={0.6}>
+              <ToogleDarkMode />
             </Fade>
           </motion.div>
         )}
