@@ -1,5 +1,4 @@
 import { signOut } from "@/auth";
-import { redirect } from "next/dist/server/api-utils";
 
 export default async function Dashboard() {
   return (
