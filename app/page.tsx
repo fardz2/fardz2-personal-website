@@ -5,7 +5,7 @@ import NavBar from "../components/NavBar";
 import Portfolio from "../components/Portfolio";
 import Footer from "../components/footer";
 
-export default function Page() {
+export default async function Page() {
   return (
     <>
       <NavBar />
