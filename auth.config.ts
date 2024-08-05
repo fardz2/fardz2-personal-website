@@ -1,11 +1,10 @@
 import Credentials from "next-auth/providers/credentials"
-import GitHub from "next-auth/providers/github"
 import type { NextAuthConfig } from "next-auth"
 import { comparePassword, saltAndHashPassword } from "./utils/password";
 import db from "./db";
 
  
-export default { providers: [GitHub,Credentials({
+export default { providers: [Credentials({
     // You can specify which fields should be submitted, by adding keys to the `credentials` object.
     // e.g. domain, username, password, 2FA token, etc.
     credentials: {
