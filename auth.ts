@@ -1,10 +1,9 @@
 import NextAuth from "next-auth"
 import { PrismaAdapter } from "@auth/prisma-adapter"
 import Credentials from "next-auth/providers/credentials"
-// import GitHub from "next-auth/providers/github"
-import db from "@/lib/db"
-import { comparePassword, saltAndHashPassword } from "./utils/password"
+
 import authConfig from "./auth.config"
+import db from "./db"
 
  
 export const { handlers, auth, signIn, signOut } = NextAuth({

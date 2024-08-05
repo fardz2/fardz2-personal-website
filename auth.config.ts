@@ -2,14 +2,15 @@ import Credentials from "next-auth/providers/credentials"
 import GitHub from "next-auth/providers/github"
 import type { NextAuthConfig } from "next-auth"
 import { comparePassword, saltAndHashPassword } from "./utils/password";
-import db from "./lib/db";
+import db from "./db";
+
  
 export default { providers: [GitHub,Credentials({
     // You can specify which fields should be submitted, by adding keys to the `credentials` object.
     // e.g. domain, username, password, 2FA token, etc.
     credentials: {
-      email: {},
-      password: {},
+      email: { label: "Email" ,type:"email"},
+      password: { label: "Password", type: "password" },
     },
     authorize: async (credentials) => {
       if (!credentials || !credentials.email || !credentials.password) {
