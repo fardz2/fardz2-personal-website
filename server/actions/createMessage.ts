@@ -27,7 +27,7 @@ export async function createMessage(prevState: any,data: FormData) {
         if (e instanceof Prisma.PrismaClientKnownRequestError) {
           // The .code property can be accessed in a type-safe manner
           if (e.code === 'P2002') {
-            throw new Error('There was a unique constraint error')
+            throw new Error('There was a unique constraint error in the database')
           }
         }
         throw e
