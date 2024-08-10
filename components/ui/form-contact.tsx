@@ -3,12 +3,10 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-
-import { Button } from "@/components/ui/button";
+import { useActionState, useEffect, useRef } from "react";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -16,35 +14,50 @@ import {
 } from "./form";
 import { Input } from "./input";
 import { Textarea } from "./textarea";
+import { formContactSchema } from "@/server/validation/formContactShema";
+import { createMessage } from "@/server/actions/createMessage";
+import { useToast } from "./use-toast";
+import { Button } from "./button";
 import { PaperPlaneIcon } from "@radix-ui/react-icons";
-
-const formSchema = z.object({
-  fullname: z.string().min(2, {
-    message: "Fullname must be at least 2 characters",
-  }),
-  email: z.string().email("This is not a valid email"),
-  message: z.string().min(10, {
-    message: "Message must be at least 10 characters",
-  }),
-});
-
-export function FormCustom() {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+const initialState = {
+  message: "",
+};
+export function FormContact() {
+  const { toast } = useToast();
+  const [state, formAction, pending] = useActionState(
+    createMessage,
+    initialState
+  );
+  const formRef = useRef<HTMLFormElement>(null);
+  const form = useForm<z.infer<typeof formContactSchema>>({
+    resolver: zodResolver(formContactSchema),
     defaultValues: {
       fullname: "",
       email: "",
       message: "",
     },
   });
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
-  }
+  useEffect(() => {
+    if (state.type === "success") {
+      toast({
+        description: "Your message has been sent.",
+      });
+      form.reset();
+    }
+  }, [state, form, toast]);
+
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)}>
+      <form
+        ref={formRef}
+        action={formAction}
+        onSubmit={(evt) => {
+          evt.preventDefault();
+          form.handleSubmit(() => {
+            formAction(new FormData(formRef.current!));
+          })(evt);
+        }}
+      >
         <div className="grid md:grid-cols-2 grid-rows-1 gap-4">
           <div>
             <FormField
@@ -90,7 +103,6 @@ export function FormCustom() {
                       {...field}
                     />
                   </FormControl>
-
                   <FormMessage />
                 </FormItem>
               )}
@@ -100,8 +112,10 @@ export function FormCustom() {
         <Button
           type="submit"
           className="mt-10 font-bold flex items-center justify-between gap-2"
+          disabled={pending}
+          aria-disabled={pending}
         >
-          Send
+          {pending ? "Submitting..." : "Send"}
           <PaperPlaneIcon className="h-4 w-4" />
         </Button>
       </form>

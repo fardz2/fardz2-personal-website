@@ -1,5 +1,5 @@
 import { Fade } from "./animate/Fade";
-import { FormCustom } from "./ui/form-custom";
+import { FormContact } from "./ui/form-contact";
 
 export default function Contact() {
   return (
@@ -11,7 +11,7 @@ export default function Contact() {
           </Fade>
           <Fade initial={-10} animate={0} delay={0.8}>
             <div className="mt-10">
-              <FormCustom />
+              <FormContact />
             </div>
           </Fade>
         </div>

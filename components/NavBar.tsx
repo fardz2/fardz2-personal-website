@@ -1,11 +1,12 @@
 "use client";
-import { cn } from "@/utils/cn";
+
 import React, { useEffect, useState, useRef } from "react";
 import { Rotate as Hamburger } from "hamburger-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Fade } from "./animate/Fade";
 import Link from "next/link";
 import { ToogleDarkMode } from "./dark-mode/toogle-darkmode";
+import { cn } from "@/lib/utils";
 
 export default function NavBar() {
   const [scrolling, setScrolling] = useState<boolean>(false);
