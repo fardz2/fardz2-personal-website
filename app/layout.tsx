@@ -23,8 +23,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${poppins.className}  dark:bg-gray-950 scroll-smooth`}>
+    <html lang="en" className="scroll-smooth">
+      <body className={`${poppins.className}  dark:bg-gray-950 `}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

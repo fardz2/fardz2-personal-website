@@ -154,7 +154,7 @@ export default function NavBar() {
       <AnimatePresence>
         {show && (
           <motion.div
-            className="fixed top-0 right-0 left-0 bottom-0 flex items-center justify-center flex-col gap-3 z-[90] bg-white dark:bg-black"
+            className="fixed top-0 right-0 left-0 bottom-0 flex items-center justify-center flex-col gap-3 z-[90] bg-white dark:bg-gray-950"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
