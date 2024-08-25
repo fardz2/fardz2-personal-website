@@ -15,6 +15,12 @@ const portfolios: Portfolio[] = [
       "'Bandung Sewa Motor' is an innovative mobile app I developed as the culmination of my independent study at LearningX. This final project is strategically designed to focus on client acquisition and custom application development.",
   },
   {
+    image: "/assets/naima.png",
+    title: "TokoNaima",
+    description:
+      "'Toko Naima' is a Flutter-based POS application I developed to help my parents manage their business. It offers essential features like item management, shopping carts, and barcode scanning to streamline transactions, making sales more efficient and easier to manage.",
+  },
+  {
     image: "/assets/1.png",
     title: "Graphic Tailor",
     description:

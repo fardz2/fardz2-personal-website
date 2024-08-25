@@ -77,7 +77,7 @@ export default function NavBar() {
         className={cn(
           "fixed top-0 right-0 left-0 z-[100] transition",
           scrolling
-            ? "bg-white/30 dark:bg-gray-950/30 backdrop-blur-sm shadow-sm "
+            ? "bg-white/30 dark:bg-gray-950/30 backdrop-blur-sm shadow-sm"
             : "",
           show ? "shadow-none" : ""
         )}
@@ -96,7 +96,7 @@ export default function NavBar() {
             <Link href={"#main"}>
               <p
                 className={cn(
-                  " transition-all ",
+                  "transition-all ",
                   activeSection == "main"
                     ? "text-[#FEBD17]"
                     : "text-black dark:text-slate-300"
@@ -109,7 +109,7 @@ export default function NavBar() {
             <Link href={"#about"}>
               <p
                 className={cn(
-                  " transition-all ",
+                  "transition-all ",
                   activeSection == "about"
                     ? "text-[#FEBD17]"
                     : "text-black dark:text-slate-300"
@@ -122,7 +122,7 @@ export default function NavBar() {
             <Link href={"#portfolio"}>
               <p
                 className={cn(
-                  " transition-all ",
+                  "transition-all ",
                   activeSection == "portfolio"
                     ? "text-[#FEBD17]"
                     : "text-black dark:text-slate-300"
